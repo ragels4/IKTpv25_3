@@ -99,7 +99,7 @@ else:
 ##   or
 #    summa += i
 #print(f"Summa on {summa}")
-
+#
 #ex5
 
 import random
