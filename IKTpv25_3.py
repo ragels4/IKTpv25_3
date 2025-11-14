@@ -100,7 +100,22 @@ else:
 #    summa += i
 #print(f"Summa on {summa}")
 
+#ex5
 
+import random
+summa = 0
+
+n = random.randint(2, 10)
+for i in range(n):
+    while True:
+        try:
+            arv = int(input("Sisesta suvaline arv"))
+            break
+        except:
+            print("Palun sisesta korrektne arv!")
+    if arv < 0:
+        summa+=arv
+print("Negatiivside arvude summa on:", summa)
 
 
 
