@@ -12,16 +12,16 @@ def generaator(n,loend,a,b):
         loend.append(randint(a,b))
     
 
-def jagamine(loend,p,n,nol):
+def jagamine(loend: list, p: list, n: list, nol: list):
     for el in loend:
         if el>0:
             p.append(el)  # исправил правильно append
-        elif el<0:
+        elif el<0:        #убрал лишнее двоеточие
             n.append(el)
         else:
             nol.append(el)
 
-def keskmine(loend,n):
+def keskmine(loend):
     #правильно поставил табы
     n=len(loend)
     if n==0:
@@ -54,21 +54,21 @@ def arvud_loendis():
     maxi=int(input("Sisesta vahemiku maksimaalne arv => "))
     #убрал лишние двоеточия и поправил табы
     if mini>=maxi:
-        mini, maxi = vahetus(mini, maxi)  # добавил результат функции
+        mini, maxi = vahetus(mini, maxi)  # corrected to capture swapped values
     generaator(n,s,mini,maxi)  # исправлено generator на generaator
     print()
     print("Tulemused:")
-    print("Saadud loend alates",mini,"kuni",maxi,s)
+    print("Saadud loend alates",mini,"kuni", s)
     s.sort()
     print("Sorteeritud loend", s)
     jagamine(s,pos,neg,nol)
     print("Positiivsete elementide loend",pos)
     print("Negatiivsete elementide loend",neg)
     print("Null-elementide loend",nol)
-    kesk=keskmine(pos,n)
+    kesk=keskmine(pos)  # only pass the list
     lisamine(s,kesk)
     print("Positiivsete keskmine:",kesk)
-    kesk=keskmine(neg,n)
+    kesk=keskmine(neg)  # only pass the list
     lisamine(s,kesk)
     print("Negatiivsete keskmine:",kesk)
     print("Lisame keskmised algsesse massiivi:")
